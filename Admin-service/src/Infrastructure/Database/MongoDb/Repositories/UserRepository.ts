@@ -1,6 +1,6 @@
 import { User, UserData } from "../../../../Domain/Entity/Index";
 import { Admin } from "../Models/loginSchema";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 
 
 export const addUser = async (data: UserData): Promise<User | null> => {

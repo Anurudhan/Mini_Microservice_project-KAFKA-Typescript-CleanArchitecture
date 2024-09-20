@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node dist/index.js",
+    "dev": "tsc-watch --onSuccess \"npm start\" "
   },
   "keywords": [],
   "author": "",
@@ -16,7 +17,8 @@
     "dotenv": "^16.4.5",
     "express": "^4.21.0",
     "kafkajs": "^2.2.4",
-    "mongoose": "^8.6.3"
+    "mongoose": "^8.6.3",
+    "tsc-watch": "^6.2.0"
   },
   "devDependencies": {
     "@types/node": "^22.5.5",

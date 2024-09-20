@@ -1,6 +1,6 @@
 import { AdminEntity, AdminLoginRequest } from "../../../../Domain/Entity/Index";
 import { Admin } from "../Models/loginSchema";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 
 export const login = async (
   data: AdminLoginRequest

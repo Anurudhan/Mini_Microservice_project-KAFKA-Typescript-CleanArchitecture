@@ -7,7 +7,7 @@ import {dependencies} from '../config/dependencies'
 
 dotenv.config();
 const app: Application = express();
-const PORT: number = 4000;
+const PORT: number = Number(process.env.PORT)
 
 app.use(express.json());
 app.use(express.urlencoded({extended : true }));
