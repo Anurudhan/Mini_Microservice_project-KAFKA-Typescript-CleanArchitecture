@@ -18,6 +18,7 @@ app.use('/product',proxy("http://localhost:4000/"))
 app.use('/admin',proxy("http://localhost:5000/"))
 app.use('/cart',proxy("http://localhost:6000/"))
 
+
 app.listen(PORT,()=>{
     console.log(`The gateway is listening to the port ${PORT}`);
 })
