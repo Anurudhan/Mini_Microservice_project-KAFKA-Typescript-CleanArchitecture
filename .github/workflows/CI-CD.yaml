@@ -36,27 +36,27 @@ jobs:
       - name: Build and push auth-service
         uses: docker/build-push-action@v2
         with:
-          context: ../Auth-service
+          context: ./Auth-service
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/week22_authsrv:latest
 
       - name: Build and push product-service
         uses: docker/build-push-action@v2
         with:
-          context: ../Product-service
+          context: ./Product-service
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/week22_productsrv:latest
 
       - name: Build and push cart-service
         uses: docker/build-push-action@v2
         with:
-          context: ../Cart-service
+          context: ./Cart-service
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/week22_cartsrv:latest
 
       - name: Build and push admin-service
         uses: docker/build-push-action@v2
         with:
-          context: ../Admin-service
+          context: ./Admin-service
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/week22_adminsrv:latest
