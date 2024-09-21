@@ -15,8 +15,8 @@ export const login = async (
       throw new Error("Invalid email format");
     }
 
-    if (data.password.length < 8) {
-      throw new Error("Password must be at least 8 characters long");
+    if (data.password.length < 6) {
+      throw new Error("Password must be at least 6 characters long");
     }
 
     

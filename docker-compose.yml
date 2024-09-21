@@ -16,6 +16,55 @@ services:
   auth-service:
     build: ./Auth-service
     ports:
-      - "3001:3001"
+      - "3000:3000"
     depends_on:
       - kafka
+    environment:
+      KAFKA_BROKER: kafka:9092
+      ZOOKEEPER_CONNECT: zookeeper:2181
+
+
+  admin-service:
+    build: ./Admin-service
+    ports:
+      - "5000:5000  "
+    depends_on:
+      - kafka
+    environment:
+      KAFKA_BROKER: kafka:9092
+      ZOOKEEPER_CONNECT: zookeeper:2181
+
+
+  product-service:
+    build: ./Product-service
+    ports:
+      - "4000:4000"
+    depends_on:
+      - kafka
+    environment:
+      KAFKA_BROKER: kafka:9092
+      ZOOKEEPER_CONNECT: zookeeper:2181
+
+
+  cart-service:
+    build: ./Cart-service
+    ports:
+      - "6000:6000"
+    depends_on:
+      - kafka
+    environment:
+      KAFKA_BROKER: kafka:9092
+      ZOOKEEPER_CONNECT: zookeeper:2181
+
+  api-gateway:
+    build: ./Api-gateway
+    ports:
+      - "8000:8000"
+    depends_on:
+      - auth-service
+      - admin-service
+      - product-service
+      - cart-service
+    environment:
+      KAFKA_BROKER: kafka:9092
+      ZOOKEEPER_CONNECT: zookeeper:2181
